@@ -1,8 +1,45 @@
 [tools]
-node = "latest"
-pnpm = "latest"
-go = "1.22"
-java = "temurin-21"
-deno = "latest"
+# Rust
+rust = "latest"
+"cargo:eza" = "0.23.4"
+"cargo:zellij" = "latest"
+"cargo:rustfs-cli" = "latest"
+
+# Go
+go = "1.25"
+"go:github.com/jesseduffield/lazydocker" = "latest"
+"go:github.com/jesseduffield/lazygit" = "latest"
+"go:github.com/minio/mc" = "latest"
+"go:github.com/nats-io/natscli/nats" = "latest"
+"go:github.com/sqlc-dev/sqlc/cmd/sqlc" = "latest"
+"go:github.com/mikefarah/yq/v4" = "latest"
+"go:github.com/unkn0wn-root/resterm/cmd/resterm" = "latest"
+"go:github.com/OpenSLO/oslo/cmd/oslo" = "latest"
+"go:github.com/slok/sloth/cmd/sloth" = "latest"
+"go:github.com/google/yamlfmt/cmd/yamlfmt" = "latest"
+"go:github.com/zitadel/zitadel-tools" = "latest"
+
+# Java
+java = "21"
+
+# JS / TS
+node = "22"
+pnpm = "10"
+yarn = "1.22.22"
 bun = "latest"
-"cargo:eza" = "latest"
+deno = "latest"
+"npm:nx" = "latest"
+"npm:opencode-ai" = "latest"
+"npm:@openai/codex" = "latest"
+"npm:@fission-ai/openspec" = "latest"
+"npm:@sonar/scan" = "latest"
+"npm:wrangler" = "4.54.0"
+"npm:@railway/cli" = "latest"
+"npm:artillery" = "latest"
+
+# Bin
+deck = "latest"
+trivy = "latest"
+
+[settings]
+experimental = true
