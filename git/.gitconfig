@@ -1,12 +1,8 @@
-# This is Git's per-user configuration file.
+# Git per-user config — portable. Machine-specific bits live in ~/.gitconfig.local
 [user]
-# Please adapt and uncomment the following lines:
 	name = jonas
-  email = jonas@psmnd.dev
-	signingkey = /Users/jonas/.ssh/id_ed25519.pub
-[gpg]
-	format = ssh
-[commit]
-	gpgsign = true
+	email = jonas@psmnd.dev
 [core]
 	editor = vim
+[include]
+	path = ~/.gitconfig.local

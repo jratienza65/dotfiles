@@ -1,0 +1,8 @@
+[tools]
+node = "latest"
+pnpm = "latest"
+go = "1.22"
+java = "temurin-21"
+deno = "latest"
+bun = "latest"
+"cargo:eza" = "latest"
