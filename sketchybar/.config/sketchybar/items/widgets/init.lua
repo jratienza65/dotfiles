@@ -1,0 +1,10 @@
+-- Shared event so only one widget popup is open at a time (no overlap)
+sbar.add("event", "popup_open")
+
+require("items.widgets.control_center")
+require("items.widgets.wifi_menu")
+require("items.widgets.netbird")
+require("items.widgets.battery")
+require("items.widgets.volume")
+require("items.widgets.wifi")
+require("items.widgets.cpu")
