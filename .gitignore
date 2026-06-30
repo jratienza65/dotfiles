@@ -1,1 +1,6 @@
 .DS_Store
+
+# sketchybar helper binaries — rebuilt from source on every launch by
+# helpers/init.lua ("cd helpers && make"), so they're host-arch artifacts, not source.
+sketchybar/.config/sketchybar/helpers/**/bin/
+*.o

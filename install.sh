@@ -10,17 +10,24 @@ DRY=""
 [ "${1:-}" = "-n" ] && DRY="--no --verbose"
 
 # Space-separated lists (POSIX sh has no arrays). Package names never contain spaces.
-COMMON="nvim"
+COMMON="nvim git zsh starship ghostty zed"
 MACOS="skhd yabai sketchybar borders"
 LINUX=""
 WINDOWS=""
 
-# $DRY and $pkgs are intentionally unquoted to word-split into separate args.
+# Packages whose target dir is shared with untracked local data, so they must be
+# linked per-file (--no-folding) rather than as one folded directory symlink.
+# e.g. zed: ~/.config/zed also holds conversations/, prompts/ that stay local.
+NOFOLD="zed"
+
+# $DRY, $extra and $1 are intentionally unquoted to word-split into separate args.
 stow_pkgs() {
   for pkg in $1; do
     [ -d "$pkg" ] || continue
+    extra=""
+    case " $NOFOLD " in *" $pkg "*) extra="--no-folding" ;; esac
     echo "stow: $pkg"
-    stow --restow --target="$HOME" $DRY "$pkg"
+    stow --restow --target="$HOME" $DRY $extra "$pkg"
   done
 }
 
