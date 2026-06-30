@@ -1,0 +1,5 @@
+# Personal identity (default). Applied everywhere except work dirs.
+[user]
+	name = jonas
+	email = jratienza65@gmail.com
+	signingkey = ~/.ssh/jratienza65.pub

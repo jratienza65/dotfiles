@@ -1,8 +1,26 @@
-# Git per-user config — portable. Machine-specific bits live in ~/.gitconfig.local
-[user]
-	name = jonas
-	email = jonas@psmnd.dev
+# Portable git config. Identity is chosen by directory (includes below):
+#   default = personal; work identity inside known work dirs.
+# Work repos are scattered — for a stray repo not under a work dir, run
+#   `git work`  or  `git personal`  to stamp the right identity locally.
+[init]
+	defaultBranch = main
 [core]
 	editor = vim
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+
+# --- identity selection (order matters: personal is the default, work overrides) ---
 [include]
-	path = ~/.gitconfig.local
+	path = ~/.config/git/personal
+# Pisomind Inc.
+[includeIf "gitdir:~/Creatizens/"]
+	path = ~/.config/git/pisomind
+[includeIf "gitdir:~/psmnd/"]
+	path = ~/.config/git/pisomind
+
+[alias]
+	whoami = "!echo \"$(git config user.name) <$(git config user.email)>  key=$(git config user.signingkey)\""
+	work = "!git config user.name jonas; git config user.email jonas@psmnd.dev; git config user.signingkey ~/.ssh/id_ed25519.pub; git whoami"
+	personal = "!git config user.name jonas; git config user.email jratienza65@gmail.com; git config user.signingkey ~/.ssh/jratienza65.pub; git whoami"

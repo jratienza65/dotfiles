@@ -1,0 +1,5 @@
+# Work identity. Applied inside ~/Creatizens, ~/psmnd (see .gitconfig includeIf).
+[user]
+	name = jonas
+	email = jonas@psmnd.dev
+	signingkey = ~/.ssh/id_ed25519.pub
