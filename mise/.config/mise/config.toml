@@ -41,5 +41,9 @@ deno = "latest"
 deck = "latest"
 trivy = "latest"
 
+# Secrets
+[env]
+_.file = "{{env.HOME}}/.secrets/personal.env"
+
 [settings]
 experimental = true
