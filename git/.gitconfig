@@ -19,6 +19,11 @@
 	path = ~/.config/git/pisomind
 [includeIf "gitdir:~/psmnd/"]
 	path = ~/.config/git/pisomind
+# Per-machine override (untracked, lives in $HOME so it never syncs). Included last
+# = wins everywhere. On a WORK host, create ~/.gitconfig.local with the work identity
+# to flip the default from personal to work. Missing file is silently ignored.
+[include]
+	path = ~/.gitconfig.local
 
 [alias]
 	whoami = "!echo \"$(git config user.name) <$(git config user.email)>  key=$(git config user.signingkey)\""

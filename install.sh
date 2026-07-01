@@ -10,8 +10,8 @@ DRY=""
 [ "${1:-}" = "-n" ] && DRY="--no --verbose"
 
 # Space-separated lists (POSIX sh has no arrays). Package names never contain spaces.
-COMMON="nvim git zsh starship ghostty mise"
-MACOS="skhd yabai sketchybar borders"
+COMMON="nvim git starship mise"                   # cross-platform
+MACOS="skhd yabai sketchybar borders zsh ghostty" # macOS only: WM stack + GUI/zsh (Linux VM is headless bash)
 LINUX=""
 WINDOWS=""
 
