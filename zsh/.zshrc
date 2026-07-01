@@ -5,13 +5,6 @@ autoload -Uz compinit
 compinit
 # OPENSPEC:END
 
-# --- Aliases (guarded so they no-op when the tool isn't installed) ---
-command -v nvim >/dev/null && alias vi=nvim vim=nvim
-if command -v eza >/dev/null; then
-  alias ls="eza -l"    # eza is a better ls
-  alias la="eza -la"
-fi
-
 # --- Functions ---
 timestamp() {
     date +"%Y%m%d%H%M"
@@ -51,6 +44,14 @@ if [ -d "$HOME/.docker/completions" ]; then
 fi
 
 # --- Tool activations (guarded so a missing tool on Linux stays quiet) ---
-command -v ng       >/dev/null && source <(ng completion script)
 command -v mise     >/dev/null && eval "$(mise activate zsh)"
+command -v ng       >/dev/null && source <(ng completion script)
+
+# --- Aliases (guarded so they no-op when the tool isn't installed) ---
+command -v nvim >/dev/null && alias vi=nvim vim=nvim
+if command -v eza >/dev/null; then
+  alias ls="eza -l"    # eza is a better ls
+  alias la="eza -la"
+fi
+
 command -v starship >/dev/null && eval "$(starship init zsh)"   # prompt — keep last
