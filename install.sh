@@ -12,7 +12,7 @@ DRY=""
 # Space-separated lists (POSIX sh has no arrays). Package names never contain spaces.
 COMMON="nvim git starship mise"                   # cross-platform
 MACOS="skhd yabai sketchybar borders zsh ghostty" # macOS only: WM stack + GUI/zsh (Linux VM is headless bash)
-LINUX=""
+LINUX="bash"
 WINDOWS=""
 
 # Packages whose target dir is shared with untracked local data must be linked
